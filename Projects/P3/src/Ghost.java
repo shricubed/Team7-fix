@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+//This is a test comment
 public class Ghost {
   String myName;
   Location myLoc;
