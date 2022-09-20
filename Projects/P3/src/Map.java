@@ -72,4 +72,8 @@ public class Map {
     // the id for a cookie at (10, 1) is tok_x10_y1
     return null;
   }
+
+  public HashMap<String, Location> getLocations(){
+    return locations;
+  }
 }
