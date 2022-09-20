@@ -16,7 +16,10 @@ public class Ghost {
 	  for (int i = -1; i < 2; i++) {
 		  for (int j = -1; j < 2; j++) {
 			  Location loc = new Location(myLoc.x + i, myLoc.y + j);
-			  if ((i != 0 || j != 0) && myMap.getLoc(loc).contains(Map.Type.EMPTY)) {
+			  if ((i != 0 || j != 0) && 
+					  (myMap.getLoc(loc).contains(Map.Type.EMPTY) ||
+					  myMap.getLoc(loc).contains(Map.Type.GHOST) ||
+					  myMap.getLoc(loc).contains(Map.Type.PACMAN))) {
 				  list.add(loc);
 			  }
 		  }
