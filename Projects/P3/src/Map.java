@@ -64,6 +64,10 @@ public class Map {
 
   public boolean attack(String Name) {
     // update gameOver
+    Location ghostLoc = locations.get(Name);
+    Location pacmanLoc = locations.get("pacman");
+    
+    gameOver = true;
     return false;
   }
 
