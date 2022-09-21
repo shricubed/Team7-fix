@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import javax.swing.JComponent;
-import java.util.HashMap;
 
 public class PacMan {
   String myName;
@@ -23,23 +22,17 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    HashMap<String, Location> h = myMap.getLocations();
-    for (String str : h.keySet()){
-      if(str == "ghost") {
-        Location ghostLoc = h.get(str);
-        if(ghostLoc.x == myLoc.x && ghostLoc.y == myLoc.y+1){
-          return true;
-        }
-        if(ghostLoc.x == myLoc.x && ghostLoc.y == myLoc.y-1){
-          return true;
-        }
-        if(ghostLoc.x == myLoc.x+1 && ghostLoc.y == myLoc.y){
-          return true;
-        }
-        if(ghostLoc.x == myLoc.x-1 && ghostLoc.y == myLoc.y){
-          return true;
-        }
-      }
+    ArrayList<Location> checkAround = new ArrayList<>();
+
+    checkAround.add(new Location(myLoc.x+1, myLoc.y));
+    checkAround.add(new Location(myLoc.x-1, myLoc.y));
+    checkAround.add(new Location(myLoc.x, myLoc.y+1));
+    checkAround.add(new Location(myLoc.x, myLoc.y-1));
+
+    for(Location loc : checkAround){
+      if (myMap.getField().get(loc).contains(Map.Type.GHOST)){
+        return true;
+      };
     }
     return false;
   }
