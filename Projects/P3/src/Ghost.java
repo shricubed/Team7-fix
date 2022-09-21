@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 //This is a test comment
 public class Ghost {
   String myName;
@@ -20,6 +21,18 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
+    ArrayList<Location> checkAround = new ArrayList<>();
+
+    checkAround.add(new Location(myLoc.x+1, myLoc.y));
+    checkAround.add(new Location(myLoc.x-1, myLoc.y));
+    checkAround.add(new Location(myLoc.x, myLoc.y+1));
+    checkAround.add(new Location(myLoc.x, myLoc.y-1));
+
+    for(Location loc : checkAround){
+      if (myMap.getField().get(loc).contains(Map.Type.PACMAN)){
+        return true;
+      };
+    }
     return false;
   }
 
