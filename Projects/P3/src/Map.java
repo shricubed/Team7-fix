@@ -73,7 +73,8 @@ public class Map {
     return null;
   }
 
-  public HashMap<String, Location> getLocations(){
-    return locations;
+  public HashMap<Location, HashSet<Type>> getField(){
+    return field;
   }
+
 }
