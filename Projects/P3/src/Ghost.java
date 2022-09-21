@@ -37,6 +37,16 @@ public class Ghost {
   }
 
   public boolean attack() {
-    return false;
+    /* check if pacman is in range of ghost with the is_pacman_in_range function
+     * if so, call the map attack method on pacman and return true
+     * else return false
+     */
+
+     //myMap.attack expects the name of a ghost, and returns true if successful
+    if(is_pacman_in_range()){
+      return myMap.attack(myName);
+    }else{
+      return false;
+    }
   }
 }
