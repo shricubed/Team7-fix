@@ -62,8 +62,29 @@ public class Map {
     return null;
   }
 
+  public boolean attackHelper (HashSet<Type> direction, Location ghostLoc) {
+    if(direction.contains(Type.PACMAN)){
+      field.get(ghostLoc).remove(Type.GHOST);
+      direction.remove(Type.PACMAN);
+      direction.add(Type.GHOST);
+      gameOver = true;
+      return true;
+    }
+    return false;
+  }
+
   public boolean attack(String Name) {
     // update gameOver
+    Location ghostLoc = locations.get(Name);
+    
+    HashSet<Type> up = field.get(new Location(ghostLoc.x, ghostLoc.y+1));
+    HashSet<Type> down = field.get(new Location(ghostLoc.x, ghostLoc.y-1));
+    HashSet<Type> left = field.get(new Location(ghostLoc.x-1, ghostLoc.y));
+    HashSet<Type> right = field.get(new Location(ghostLoc.x+1, ghostLoc.y));
+
+    if(attackHelper(up, ghostLoc) || attackHelper(down, ghostLoc) || attackHelper(left, ghostLoc) || attackHelper(right, ghostLoc)) {
+      return true;
+    }
     return false;
   }
 
