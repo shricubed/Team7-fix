@@ -54,8 +54,27 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
+	  
+	HashSet<Type> types = field.get(loc);
+	  
+	if (type == Map.Type.PACMAN) {
+		if (types.contains(Map.Type.PACMAN) || types.contains(Map.Type.WALL))
+			return false;
+		
+		PacManComponent pacman = (PacManComponent) components.get(name);
+		pacman.setLocation(loc.x, loc.y);
+	} else if (type == Map.Type.GHOST) {
+		if (types.contains(Map.Type.GHOST) || types.contains(Map.Type.WALL))
+			return false;
+		
+		GhostComponent ghost = (GhostComponent) components.get(name);
+		ghost.setLocation(loc.x, loc.y);
+	}
 	
-    return false;
+	locations.put(name, loc);
+	types.add(type);
+	
+    return true;
   }
 
   public HashSet<Type> getLoc(Location loc) {
@@ -74,3 +93,4 @@ public class Map {
     return null;
   }
 }
+ 
