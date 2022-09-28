@@ -64,13 +64,14 @@ public class Map {
 		PacManComponent pacman = (PacManComponent) components.get(name);
 		pacman.setLocation(loc.x, loc.y);
 	} else if (type == Map.Type.GHOST) {
-		if (types.contains(Map.Type.GHOST) || types.contains(Map.Type.WALL))
+		if (types.contains(Map.Type.WALL))
 			return false;
 		
 		GhostComponent ghost = (GhostComponent) components.get(name);
 		ghost.setLocation(loc.x, loc.y);
 	}
-	
+
+	locations.remove(name);
 	locations.put(name, loc);
 	types.add(type);
 	
