@@ -152,6 +152,5 @@ public class Map {
   public HashMap<Location, HashSet<Type>> getField(){
     return field;
   }
-
 }
  
