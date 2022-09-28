@@ -27,7 +27,9 @@ public class PacMan {
 
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
-		  if (myMap.getLoc(loc).contains(Map.Type.EMPTY) &&
+		  if ((myMap.getLoc(loc).contains(Map.Type.EMPTY)|| 
+				  myMap.getLoc(loc).contains(Map.Type.COOKIE) ||
+				  myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
 				  !myMap.getLoc(loc).contains(Map.Type.WALL)) {
 			  valid_moves.add(loc);
 		  }
