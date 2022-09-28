@@ -56,7 +56,7 @@ public class Ghost {
         Location other = new Location(shiftX, shiftY);
         this.myLoc = other.unshift(this.myLoc);
       }
-
+      this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
       return true;
     }
     
