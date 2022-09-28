@@ -148,5 +148,10 @@ public class Map {
       return null;
     }
   }
+
+  public HashMap<Location, HashSet<Type>> getField(){
+    return field;
+  }
+
 }
  
