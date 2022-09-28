@@ -21,6 +21,7 @@ public class Ghost {
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
 		  if ((myMap.getLoc(loc).contains(Map.Type.EMPTY)
+				  || myMap.getLoc(loc).contains(Map.Type.COOKIE)
 				  || myMap.getLoc(loc).contains(Map.Type.PACMAN)
 				  || myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
 				  !myMap.getLoc(loc).contains(Map.Type.WALL)) {
