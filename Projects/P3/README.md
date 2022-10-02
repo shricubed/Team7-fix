@@ -29,7 +29,7 @@ java -cp "src/" StartMenu
 - 
 
 #### is_ghost_in_range()
-- Inserted all of the possible movement locations (1 space up, down, left, right) into an `Arraylist` amd went through the that list of adjacent locations to see if any contained a Ghost. If any of them did, then return true, othewise return false.
+- Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` amd went through the that list of adjacent locations to see if any contained a Ghost. If any of them did, then return true, othewise return false.
 - 
 
 #### consume()
@@ -47,7 +47,7 @@ java -cp "src/" StartMenu
 - 
 
 #### is_pacman_in_range()
-- 
+- Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` amd went through the that list of adjacent locations to see if any contained PacMan. If any of them did, then return true, othewise return false.
 - 
 
 #### attack()
