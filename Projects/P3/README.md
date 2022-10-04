@@ -29,7 +29,7 @@ java -cp "src/" StartMenu
 - 
 
 #### is_ghost_in_range()
-- 
+- Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained a Ghost. If any of them did, then return true, otherwise return false.
 - 
 
 #### consume()
@@ -47,7 +47,7 @@ java -cp "src/" StartMenu
 - 
 
 #### is_pacman_in_range()
-- 
+- Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained PacMan. If any of them did, then return true, otherwise return false.
 - 
 
 #### attack()
@@ -65,7 +65,7 @@ java -cp "src/" StartMenu
 - 
 
 #### attack(String name)
-- 
+- Inserted all of the adjacent locations into an Arraylist and passed each element into a helper function `attackHelper (HashSet<Type> direction, Location ghostLoc)`. This helper would then check if any adjacent direction contains PacMan and replaces PacMan with the Ghost at that location and ends the game.
 - 
 
 #### eatCookie(String name)
