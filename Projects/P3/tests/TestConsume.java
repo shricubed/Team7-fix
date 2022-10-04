@@ -16,7 +16,6 @@ public class TestConsume extends TestCase {
     //MainFrame frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
     NoFrame frame = new NoFrame(); //Creates A New Map With Walls and Tokens w/o a Display
 
-    //Creating Players
     //Ghost ghost = frame.addGhost(new Location(1, 1), "name", Color.red); //Creates a red ghost named "name" at location x,y
     PacMan pacman = frame.addPacMan(new Location(2, 3)); //Creates PacMan at location x, y 2,3 is a cookie so is 2,3
     
@@ -31,13 +30,12 @@ public class TestConsume extends TestCase {
     assertNotNull(temp); //temp should be a consumed cookie
     System.out.println("Asserting that cookies count is updated");
     assertEquals(frame.getMap().getCookies(), 1);
-
     HashSet<Map.Type> after_consume = frame.getMap().getLoc(new Location(2, 3));
     expected = new HashSet<Map.Type>();
     expected.add(Map.Type.PACMAN);
     System.out.println("Asserting that old cookie was removed from the current location");
     assertEquals(after_consume, expected);
-    //System.out.println(temp);
+
     //alternatively if you don't need the PacMan or Ghost objects in your tests
     //frame.initPlayers(); //Creates all of the players
 
