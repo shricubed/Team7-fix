@@ -55,6 +55,8 @@ public class PacMan {
           shiftY = moves.get(0).y - this.myLoc.y;
           this.myLoc = this.myLoc.shift(shiftX, shiftY);
         }
+        this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
+        return true;
       }
       else { // Move down
         shiftX = this.myLoc.x - moves.get(0).x;

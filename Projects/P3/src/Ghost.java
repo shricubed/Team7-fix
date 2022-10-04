@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 //This is a test comment
 public class Ghost {
@@ -50,6 +51,8 @@ public class Ghost {
           shiftY = moves.get(0).y - this.myLoc.y;
           this.myLoc = this.myLoc.shift(shiftX, shiftY);
         }
+        this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
+        return true;
       }
       else { // Move down
         shiftX = this.myLoc.x - moves.get(0).x;
@@ -65,6 +68,7 @@ public class Ghost {
   }
 
   public boolean is_pacman_in_range() {
+    HashSet<Map.Type> type;
     ArrayList<Location> checkAround = new ArrayList<>();
 
     checkAround.add(new Location(myLoc.x+1, myLoc.y));
@@ -73,9 +77,13 @@ public class Ghost {
     checkAround.add(new Location(myLoc.x, myLoc.y-1));
 
     for(Location loc : checkAround){
-      if (myMap.getField().get(loc).contains(Map.Type.PACMAN)){
+      type = myMap.getField().get(loc);
+      if (type == null) {
+        return false;
+      }
+      if (type.contains(Map.Type.PACMAN)){
         return true;
-      };
+      }
     }
     return false;
   }
