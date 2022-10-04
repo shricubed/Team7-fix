@@ -16,6 +16,16 @@ javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
 ```
 
+## Testing the code
+Navigate to the following link <https://github.com/junit-team/junit4/wiki/Download-and-Install>.
+Download the Junit.jar and the hamcrest.jar, and move both of these files into the "test" directory.
+
+Compile and run the tests with
+```
+javac -cp "tests/*:src/:tests/" src/*.java tests/your_test.java
+java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
+```
+
 ## Functions
 
 ### PacMan Class
