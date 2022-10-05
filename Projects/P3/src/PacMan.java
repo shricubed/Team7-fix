@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.util.Random;
+
 
 import java.util.HashSet;
 import java.util.Random;
