@@ -32,4 +32,4 @@ jobs:
       java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume:
       java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostAttack:
       java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapEatCookie:
-      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestValidMove
+      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestValidMove:
