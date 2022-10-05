@@ -25,11 +25,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile/Run Josh's tests
       run: |
-      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestConsume.java
-      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostAttack.java
-      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestMapEatCookie.java
-      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestValidMove.java
-      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume
-      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostAttack
-      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapEatCookie
+      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestConsume.java:
+      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostAttack.java:
+      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestMapEatCookie.java:
+      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestValidMove.java:
+      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume:
+      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostAttack:
+      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapEatCookie:
       java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestValidMove
