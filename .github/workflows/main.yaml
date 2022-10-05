@@ -17,4 +17,4 @@ jobs:
     # Runs a single command using the runners shell
     - uses: actions/checkout@v2
     - name: Compile Tests
-      run: javac -cp "Projects/P3/src" src/*.java
+      run: javac -cp "Projects/P3/src" Projects/P3/src/*.java
