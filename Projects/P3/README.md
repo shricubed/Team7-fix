@@ -43,8 +43,8 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - To test this I first placed PacMan and the Ghost in specific locations where I knew the ghost was in range. Then I moved PacMan randomly and checked to see if it was still in range of the ghost or not by checking its adjacent spaces. Then I compared that result to the one returned by the `is_ghost_in_range()` function.
 
 #### consume()
-- 
-- 
+- Consume first checks if there is a cookie at Pacman's current location by referencing myMap.getLoc(myLoc). If this location contains a cookie to be consumed, this function calls myMap.eatCookie(pacman_name), and the eaten cookie is returned. If there is no valid cookie at this location, simply return null.
+- To test this function, I first placed PacMan in specific locations that already had cookies at them. I next called pacman.consume() and verified that the cookie was 'eaten' and returned to the test. Further testing was also done to test calling pacman.consume at a location without a cookie to ensure that null was being returned correctly.
 
 ### Ghost Class
 
