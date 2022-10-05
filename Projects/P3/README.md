@@ -40,7 +40,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 
 #### is_ghost_in_range()
 - Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained a Ghost. If any of them did, then return true, otherwise return false.
-- 
+- To test this I first placed PacMan and the Ghost in specific locations where I knew the ghost was in range. Then I moved PacMan randomly and checked to see if it was still in range of the ghost or not by checking its adjacent spaces. Then I compared that result to the one returned by the `is_ghost_in_range()` function.
 
 #### consume()
 - 
@@ -58,7 +58,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 
 #### is_pacman_in_range()
 - Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained PacMan. If any of them did, then return true, otherwise return false.
-- 
+- To test this I first placed PacMan and the Ghost in specific locations where I knew that PacMan was in range. Then I moved the Ghost randomly and checked to see if it was still in range of PacMan or not by checking its adjacent spaces. Then I compared that result to the one returned by the `is_pacman_in_range()` function.
 
 #### attack()
 - 
