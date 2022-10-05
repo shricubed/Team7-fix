@@ -36,7 +36,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 
 #### move()
 - Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Found the difference between the location to move and used the Location classes `shift` or `unshift` methods to change the location of the PacMan. Finally, updated the PacMan's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
-- 
+- Tested that the PacMan can move freely without any Ghosts nearby. Then added ghosts around PacMan to move near them as well. Finally, ensured that PacMans current location isn't the same as old location. 
 
 #### is_ghost_in_range()
 - Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained a Ghost. If any of them did, then return true, otherwise return false.
@@ -54,7 +54,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 
 #### move()
 -  Used the `get_valid_moves` function to find all the possible moves for the Ghost and proceeded to chose the first move available. Found the difference between the location to move and used the Location classes `shift` or `unshift` methods to change the location of the Ghost. Finally, updated the Ghost's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
-- 
+- Ghosts can move anywhere without any restrcitions so just moved the Ghost and checked to ensure its Location is not the same as before calling `move`.
 
 #### is_pacman_in_range()
 - Inserted all of the possible movement locations (1 space up, down, left, or right) into an `Arraylist` and went through that list of adjacent locations to see if any contained PacMan. If any of them did, then return true, otherwise return false.
@@ -72,7 +72,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 
 #### getLoc(Location loc)
 - Used the field HashMap to get what is at the given location loc. If it returns null, it means that it is out of bounds which would return the wallSet or the other Types.
-- 
+- Checked if PacMan, Ghost, and Cookie were in their respectable locations after adding them to the frame. Called the function using an out of bounds location to ensure it returns the wall set and had PacMan eat a cookie and then move to another location. Then called getLoc on the old location where the cookie used to exist to ensure that it returns the empty set. 
 
 #### attack(String name)
 - Inserted all of the adjacent locations into an Arraylist and passed each element into a helper function `attackHelper (HashSet<Type> direction, Location ghostLoc)`. This helper would then check if any adjacent direction contains PacMan and replaces PacMan with the Ghost at that location and ends the game.
