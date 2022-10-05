@@ -15,6 +15,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    -uses: actions/checkout@v2
-    -name: Compile Tests
-      run: javac -cp "Projects/P3/src/" src/*.java
+    - uses: actions/checkout@v2
+    - name: Compile Tests
+      run: javac -cp "Projects/P3/src" src/*.java
