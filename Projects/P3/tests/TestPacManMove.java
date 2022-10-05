@@ -1,4 +1,7 @@
 import java.io.*;
+
+import static org.junit.Assert.assertNotEquals;
+
 import java.awt.Color;
 import junit.framework.*;
 
@@ -15,12 +18,14 @@ public class TestPacManMove extends TestCase {
     pacman.move();
     Location newLoc = pacman.myLoc;
     assertTrue(oldLoc.x != newLoc.x || oldLoc.y != newLoc.y);
-
-    // PacMan cannot move
-    System.out.println("Asserting PacMan cannot move");
+    oldLoc = pacman.myLoc;
+    // PacMan can still move
+    System.out.println("Asserting PacMan can move");
     Ghost test1 = frame.addGhost(new Location(1, 1), "test1", Color.red);
     Ghost test2 = frame.addGhost(new Location(3, 1), "test2", Color.blue);
     Ghost test3 = frame.addGhost(new Location(2, 2), "test3", Color.yellow);
-    assertFalse(pacman.move());
+    assertTrue(pacman.move());
+    System.out.println("Asserting that location changed");
+    assertNotEquals(oldLoc, pacman.myLoc);
   }
 }
