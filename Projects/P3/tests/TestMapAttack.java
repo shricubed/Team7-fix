@@ -1,6 +1,8 @@
 import javax.accessibility.AccessibleAttributeSequence;
 
 import java.awt.Color;
+import java.io.*;
+
 import junit.framework.*;
 import java.util.*;
 
@@ -14,7 +16,7 @@ public class TestMapAttack extends TestCase {
     PacMan pacman = frame.addPacMan(new Location(1, 1)); //Creates PacMan at location x, y
 
     Map map = frame.getMap();
-    boolean result = map.attack(pacman.myName);
+    boolean result = map.attack(ghost.myName);
     assertEquals(result, true);
     assertEquals(map.isGameOver(), true);
   }
