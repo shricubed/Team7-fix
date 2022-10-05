@@ -38,7 +38,8 @@ public class PacMan {
   }
 
   public boolean move() {
-    int randomNum; // Represents amount of shift 
+    // Randomly selects a move from the valid moves and executes them
+    int randomNum; 
     Random rand = new Random();
     ArrayList<Location> moves = get_valid_moves();
 
