@@ -36,6 +36,6 @@ public class TestGhostInRange extends TestCase {
         actualGhost = true;
       };
     }
-    assertEquals(result, actualGhost);
+    assertEquals(result2, actualGhost);
   }
 }
