@@ -71,9 +71,12 @@ public class Map {
 		ghost.setLocation(loc.x, loc.y);
 	}
 
+  field.remove(locations.get(name)); //removing named object from old position
 	locations.remove(name);
 	locations.put(name, loc);
-	types.add(type);
+  field.get(loc).add(type);//updating field with type
+	//types.add(type);
+  
 	
     return true;
   }
