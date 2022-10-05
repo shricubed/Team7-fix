@@ -71,7 +71,7 @@ public class Map {
 		ghost.setLocation(loc.x, loc.y);
 	}
 
-  field.remove(locations.get(name)); //removing named object from old position
+  field.get(locations.get(name)).remove(type); //removing type from old position
 	locations.remove(name);
 	locations.put(name, loc);
   field.get(loc).add(type);//updating field with type
@@ -150,7 +150,9 @@ public class Map {
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field
+      field.get(pac_man_loc).add(Type.EMPTY);// adding empty
       field.get(pac_man_loc).remove(Type.COOKIE);
+      //field.get(pac_man_loc).add(Type.EMPTY); //adding empty
       //incrementing cookies eaten
       cookies += 1;
       //simply return the cookie now
