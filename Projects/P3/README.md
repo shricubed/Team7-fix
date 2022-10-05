@@ -6,7 +6,8 @@
 3. Roshan Shet
 4. Joshua Wyatt
 
-## PacMan Game (Image)
+## PacMan Game 
+<img width="603" alt="Screen Shot 2022-10-05 at 5 37 46 PM" src="https://user-images.githubusercontent.com/84682338/194168824-c7fd6365-64f0-41ee-b9b9-978a6ac2f07a.png">
 
 
 ## Running the Code
@@ -35,7 +36,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - 
 
 #### move()
-- Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Found the difference between the location to move and used the Location classes `shift` or `unshift` methods to change the location of the PacMan. Finally, updated the PacMan's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
+- Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Used a random number generator from zero to the size of moves array returned from `get_valid_moves` to choose a random location to move if there was more than one. Set the PacMans location to the new location chosen. Finally, updated the PacMan's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
 - Tested that the PacMan can move freely without any Ghosts nearby. Then added ghosts around PacMan to move near them as well. Finally, ensured that PacMans current location isn't the same as old location. 
 
 #### is_ghost_in_range()
@@ -53,7 +54,7 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - 
 
 #### move()
--  Used the `get_valid_moves` function to find all the possible moves for the Ghost and proceeded to chose the first move available. Found the difference between the location to move and used the Location classes `shift` or `unshift` methods to change the location of the Ghost. Finally, updated the Ghost's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
+-  Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Used a random number generator from zero to the size of moves array returned from `get_valid_moves` to choose a random location to move if there was more than one. Set the Ghosts location to the new location chosen. Finally, updated the Ghosts location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
 - Ghosts can move anywhere without any restrcitions so just moved the Ghost and checked to ensure its Location is not the same as before calling `move`.
 
 #### is_pacman_in_range()
