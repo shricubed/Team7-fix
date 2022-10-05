@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.JComponent;
+import java.util.Random;
+
 
 public class PacMan {
   String myName;
@@ -18,34 +20,25 @@ public class PacMan {
   }
 
   public boolean move() {
-    int shiftX, shiftY; // Represents amount of shift 
-    ArrayList<Location> moves = get_valid_moves();
-
-    if (!moves.isEmpty()) {
-      if (moves.get(0).x >= this.myLoc.x) { // Move up
-        if (moves.get(0).x == this.myLoc.x && moves.get(0).y < this.myLoc.y) { // Turn left
-          shiftX = 0;
-          shiftY = this.myLoc.y - moves.get(0).y;
-          Location other = new Location(shiftX, shiftY);
-          this.myLoc = other.unshift(this.myLoc);
-        }
-        else { // Go up or turn right
-          shiftX = moves.get(0).x - this.myLoc.x;
-          shiftY = moves.get(0).y - this.myLoc.y;
-          this.myLoc = this.myLoc.shift(shiftX, shiftY);
-        }
-      }
-      else { // Move down
-        shiftX = this.myLoc.x - moves.get(0).x;
-        shiftY = this.myLoc.y - moves.get(0).y;
-        Location other = new Location(shiftX, shiftY);
-        this.myLoc = other.unshift(this.myLoc);
-      }
-
-      return true;
-    }
-
-    return false;
+     // Randomly selects a move from the valid moves and executes them
+     int randomNum; 
+     Random rand = new Random();
+     ArrayList<Location> moves = get_valid_moves();
+ 
+     if (!moves.isEmpty()) {
+         int size = moves.size();
+         if (size != 1) {
+           randomNum = rand.nextInt(size);
+         }
+         else {
+           randomNum = 0;
+         }
+         this.myLoc = moves.get(randomNum);
+         this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
+         return true;
+     }
+ 
+     return false;
   }
 
   public boolean is_ghost_in_range() {
