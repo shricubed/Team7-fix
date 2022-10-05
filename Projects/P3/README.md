@@ -79,5 +79,5 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - 
 
 #### eatCookie(String name)
-- 
-- 
+- eatCookie takes a given name of a pacman object, and handles all of the work associated with removing a cookie from the game. First, this function checks to make sure a cookie exists at the location that pacman is currently at. If a cookie exists here, we remove this cookie object from the Locations HashMap, we grab the JComponent object from the components HashMap, and then remove the cookie from components. Next, the EMPTY enum is added to that location, and the COOKIE enum is removed from that location, and finally the cookie count is incremented. The JComponent Cookie that was grabbed from the components HashMap is then returned.
+- This was tested in combination with pacman.consume() since pacman.consume() calls this function to function correctly. First we place pacman at a location where there is a cookie, we have pacman eat the cookie, and then inspect the location. This location should go from [COOKIE PACMAN] to [PACMAN EMPTY]. We also assert that the cookie object was returned correctly, and that cookie count was updated.
