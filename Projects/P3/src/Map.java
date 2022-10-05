@@ -60,7 +60,15 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
     HashSet<Type> move = field.get(loc);
-    return move == null ? wallSet : move;
+    if (move == null || move.contains(Map.Type.WALL)) { // Out of bounds case
+      return wallSet;
+    }
+    else if (move.contains(Map.Type.EMPTY)) { // Empty case
+      return emptySet;
+    }
+    else {
+      return move;
+    }
   }
 
   public boolean attack(String Name) {
