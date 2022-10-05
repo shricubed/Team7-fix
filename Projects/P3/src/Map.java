@@ -55,8 +55,8 @@ public class Map {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
 	  
-	HashSet<Type> types = field.get(loc);
-	  
+	HashSet<Type> types = getLoc(loc);
+
 	if (type == Map.Type.PACMAN) {
 		if (types.contains(Map.Type.PACMAN) || types.contains(Map.Type.WALL))
 			return false;
@@ -81,7 +81,15 @@ public class Map {
   public HashSet<Type> getLoc(Location loc) {
     // wallSet and emptySet will help you write this method
     HashSet<Type> move = field.get(loc);
-    return move == null ? wallSet : move;
+    if (move == null || move.contains(Map.Type.WALL)) {
+      return wallSet;
+    }
+    else if (move.contains(Map.Type.EMPTY)) {
+      return emptySet;
+    }
+    else {
+      return move;
+    }
   }
 
   public boolean attackHelper (HashSet<Type> direction, Location ghostLoc) {
