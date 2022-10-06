@@ -29,11 +29,11 @@ jobs:
         java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume
   Josh_test_ghost_attack:
     runs-on: ubuntu-latest
-     container: openjdk
-     steps:
-     - uses: actions/checkout@v2
-     - name: Compile Run Josh Test GhostAttack
-       run: |
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test GhostAttack
+      run: |
         javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostAttack.java
         java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostAttack
   Josh_test_map_cookie:
