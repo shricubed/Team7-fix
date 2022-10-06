@@ -62,8 +62,8 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - To test this I first placed PacMan and the Ghost in specific locations where I knew that PacMan was in range. Then I moved the Ghost randomly and checked to see if it was still in range of PacMan or not by checking its adjacent spaces. Then I compared that result to the one returned by the `is_pacman_in_range()` function.
 
 #### attack()
-- 
-- 
+- This function checks if pacman is in range of the ghost by calling the is_pacman_in_range() function. If pacman is in range, we call myMap.attack(ghost_name) and we return true, else we return false. 
+- This function was tested by placing pacman one space away from the ghost and executing ghost.attack(). We assert that this returns true, and also assert that the game is now considered over. We also test by placing pacman jsut out of range of the ghost and then calling ghost.attack(), we assert that this returns false.
 
 ### Map Class
 
