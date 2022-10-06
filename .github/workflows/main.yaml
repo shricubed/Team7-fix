@@ -25,8 +25,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile/Run Josh's tests
       run: |
-      javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestConsume.java
-      java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestConsume.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume
  # Josh_test_ghost_attack:
  #   runs-on: ubuntu-latest
  #   container: opendjk
