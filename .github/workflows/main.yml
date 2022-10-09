@@ -27,8 +27,8 @@ jobs:
     - name: Compile Run Aadils Test PacMan Move
       run: |
         cd Projects/P3/
-        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" src/*.java tests/TestPacManMove.java
-        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestPacManMove
+        javac -cp "Projects/P3/tests/" src/*.java tests/TestPacManMove.java
+        java -cp "Projects/P3/tests/" org.junit.runner.JUnitCore TestPacManMove
   Aadil_Test_Ghost_move:
     runs-on: ubuntu-latest
     container: openjdk
@@ -37,8 +37,8 @@ jobs:
     - name: Compile Run Aadils Test Ghost Move
       run: |
         cd Projects/P3/
-        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" src/*.java tests/TestGhostMove.java
-        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostMove
+        javac -cp "Projects/P3/tests/" src/*.java tests/TestGhostMove.java
+        java -cp "Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostMove
   Aadil_Test_Map_getLoc:
     runs-on: ubuntu-latest
     container: openjdk
@@ -47,5 +47,5 @@ jobs:
     - name: Compile Run Aadils Test Map GetLoc
       run: |
         cd Projects/P3/
-        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" src/*.java tests/TestMapGetLoc.java
-        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapGetLoc
+        javac -cp "Projects/P3/tests/" src/*.java tests/TestMapGetLoc.java
+        java -cp "Projects/P3/tests/" org.junit.runner.JUnitCore TestMapGetLoc
