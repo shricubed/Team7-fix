@@ -26,6 +26,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile Run Aadils Test PacMan Move
       run: |
+        cd Project/P3/src/assets
         javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestPacManMove.java
         java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestPacManMove
   Aadil_Test_Ghost_move:
@@ -35,6 +36,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile Run Aadils Test Ghost Move
       run: |
+        cd Project/P3/src/assets
         javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostMove.java
         java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostMove
   Aadil_Test_Map_getLoc:
@@ -44,5 +46,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile Run Aadils Test Map GetLoc
       run: |
+        cd Project/P3/src/assets
         javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestMapGetLoc.java
         java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapGetLoc
