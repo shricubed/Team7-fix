@@ -1,0 +1,48 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+on: [push, pull_request, workflow_dispatch]
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called compile
+  compile:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - uses: actions/checkout@v2
+    - name: Compile Tests
+      run: javac -cp "Projects/P3/src" Projects/P3/src/*.java
+  Aadil_Test_PacMan_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test PacMan Move
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestPacManMove.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestPacManMove
+  Aadil_Test_Ghost_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test Ghost Move
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostMove.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostMove
+  Aadil_Test_Map_getLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test Map GetLoc
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestMapGetLoc.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapGetLoc
