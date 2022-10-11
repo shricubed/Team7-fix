@@ -1,0 +1,90 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual workflow
+
+
+on: [push, pull_request, workflow_dispatch]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called compile
+  compile:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - uses: actions/checkout@v2
+    - name: Compile Tests
+      run: javac -cp "Projects/P3/src" Projects/P3/src/*.java
+  Ankit_Test_PacMan_isGhostInRange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Ankit's Test PacMan isGhostInRange
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostInRange.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
+  Josh_test_consume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test Consume
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestConsume.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestConsume
+  Ankit_Test_Ghost_isPacManInRange:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Ankit's Test Ghost isPacManInRange
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestPacManInRange.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+  Josh_test_ghost_attack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test GhostAttack
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostAttack.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostAttack
+  Ankit_Test_Map_attack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Ankit's Test Map attack
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapAttack.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+  Josh_test_map_cookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test MapEatCookie
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapEatCookie.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+  Josh_test_valid_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test ValidMove
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestValidMove.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestValidMove
