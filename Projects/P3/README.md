@@ -32,8 +32,8 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 ### PacMan Class
 
 #### get_valid_moves()
-- 
-- 
+- Created four new locations: UP, DOWN, LEFT, and RIGHT. For each location, checked if the location was empty or contained a cookie or ghost and checked to make sure the location did not contain a wall.
+- If the check passed, the location is valid and is added to the list of valid locations that is returned at the end of the function.
 
 #### move()
 - Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Used a random number generator from zero to the size of moves array returned from `get_valid_moves` to choose a random location to move if there was more than one. Set the PacMans location to the new location chosen. Finally, updated the PacMan's location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
@@ -50,8 +50,8 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 ### Ghost Class
 
 #### get_valid_moves()
-- 
-- 
+- Identical to the function get_valid_moves() for the Pacman class. Each of the four locations are checked.
+- If a location is valid, it is added to the list of valid locations returned at the end of the function.
 
 #### move()
 -  Used the `get_valid_moves` function to find all the possible moves for the PacMan and proceeded to chose the first move available. Used a random number generator from zero to the size of moves array returned from `get_valid_moves` to choose a random location to move if there was more than one. Set the Ghosts location to the new location chosen. Finally, updated the Ghosts location on the Map with the `move` function and returned true. If no valid moves existed, returned false.
@@ -62,14 +62,18 @@ java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore your_test
 - To test this I first placed PacMan and the Ghost in specific locations where I knew that PacMan was in range. Then I moved the Ghost randomly and checked to see if it was still in range of PacMan or not by checking its adjacent spaces. Then I compared that result to the one returned by the `is_pacman_in_range()` function.
 
 #### attack()
-- 
-- 
+- This function checks if pacman is in range of the ghost by calling the is_pacman_in_range() function. If pacman is in range, we call myMap.attack(ghost_name) and we return true, else we return false. 
+- This function was tested by placing pacman one space away from the ghost and executing ghost.attack(). We assert that this returns true, and also assert that the game is now considered over. We also test by placing pacman jsut out of range of the ghost and then calling ghost.attack(), we assert that this returns false.
 
 ### Map Class
 
 #### move(String name, Location loc, Type type)
-- 
-- 
+- The function begins by retrieving a hashset of types at the given location using the getLoc() function.
+- If the type passed is Pacman and the location contains pacman or a wall, false is returned, because Pacman can't freeze or move through walls.
+- If the type passed is Ghost and the location contains a wall, false is returned, because ghosts can't move through walls.
+- If false isn't returned, the component's location is updated by calling setLocation() on its component.
+- Next, the field hashmap is updated. The type is removed from its old location and placed in its new location.
+- Finally, the locations hashmap is updated.
 
 #### getLoc(Location loc)
 - Used the field HashMap to get what is at the given location loc. If it returns null, it means that it is out of bounds which would return the wallSet or the other Types.
