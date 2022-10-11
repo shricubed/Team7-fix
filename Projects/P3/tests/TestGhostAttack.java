@@ -33,7 +33,8 @@ public class TestGhostAttack extends TestCase {
     assertTrue(result);
     HashSet<Map.Type> after_consume = frame.getMap().getLoc(new Location(2, 3));
     expected = new HashSet<Map.Type>();
-    expected.add(Map.Type.GHOST);
+    //should be empty becayse the game is now over, and board is cleared?
+    expected.add(Map.Type.EMPTY);
     System.out.println("Asserting that cookie was consumed, ghost moved into location, pacman removed since attacked");
     assertEquals(after_consume, expected);
     System.out.println("Asserting that game should be considered over since pacman was attacked");
