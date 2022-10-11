@@ -63,7 +63,7 @@ public class Ghost {
     checkAround.add(new Location(myLoc.x+1, myLoc.y));
     checkAround.add(new Location(myLoc.x-1, myLoc.y));
     checkAround.add(new Location(myLoc.x, myLoc.y+1));
-    checkAround.add(new Location(myLoc.x, myLoc.y-1));
+    checkAround.add(new Location(myLoc.x, myLoc.x-1));
 
     for(Location loc : checkAround){
       type = myMap.getField().get(loc);
