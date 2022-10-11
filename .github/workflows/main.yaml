@@ -18,3 +18,39 @@ jobs:
     - uses: actions/checkout@v2
     - name: Compile Tests
       run: javac -cp "Projects/P3/src" Projects/P3/src/*.java
+  Josh_test_consume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test Consume
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestConsume.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestConsume
+  Josh_test_ghost_attack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test GhostAttack
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestGhostAttack.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestGhostAttack
+  Josh_test_map_cookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test MapEatCookie
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestMapEatCookie.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestMapEatCookie
+  Josh_test_valid_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Josh Test ValidMove
+      run: |
+        javac -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" Projects/P3/src/*.java Projects/P3/tests/TestValidMove.java
+        java -cp "Projects/P3/tests/*:Projects/P3/src/:Projects/P3/tests/" org.junit.runner.JUnitCore TestValidMove

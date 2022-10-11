@@ -32,7 +32,7 @@ public class TestMapEatCookie extends TestCase {
     assertEquals(frame.getMap().getCookies(), 1);
     HashSet<Map.Type> after_consume = frame.getMap().getLoc(new Location(2, 3));
     expected = new HashSet<Map.Type>();
-    expected.add(Map.Type.PACMAN);
+    expected.add(Map.Type.EMPTY);
     System.out.println("Asserting that old cookie was removed from the current location");
     assertEquals(after_consume, expected);
 
