@@ -88,3 +88,33 @@ jobs:
         cd Projects/P3/
         javac -cp "tests/*:src/:tests/" src/*.java tests/TestValidMove.java
         java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestValidMove
+  Aadil_Test_PacMan_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test PacMan Move
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestPacManMove.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+  Aadil_Test_Ghost_move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test Ghost Move
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostMove.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+  Aadil_Test_Map_getLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Aadils Test Map GetLoc
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapGetLoc.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
