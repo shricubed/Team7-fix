@@ -88,10 +88,10 @@ public class Map {
       return wallSet;
     }
     else if (move.contains(Map.Type.EMPTY)) { // Empty case
-      return emptySet;
+      return move;
     }
     else {
-      return move;
+      return emptySet;
     }
   }
 

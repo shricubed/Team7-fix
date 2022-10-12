@@ -51,9 +51,9 @@ public class Ghost {
         }
         this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
-        return true;
+        return false;
     }
-    return false;
+    return true;
   }
 
   public boolean is_pacman_in_range() {

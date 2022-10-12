@@ -55,10 +55,10 @@ public class PacMan {
         }
         this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
-        return true;
+        return false;
     }
 
-    return false;
+    return true;
   }
 
   public boolean is_ghost_in_range() {
