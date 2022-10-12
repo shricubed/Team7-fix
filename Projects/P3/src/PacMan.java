@@ -85,7 +85,7 @@ public class PacMan {
      */
     //set of other components at pacmans location
     HashSet<Map.Type> other_comp = myMap.getLoc(myLoc);
-    if(other_comp.contains(Map.Type.COOKIE)){
+    if(other_comp.contains(Map.Type.GHOST)){
       //checking to make sure a cookie is at the current location
       return myMap.eatCookie(myName);
     }else{
