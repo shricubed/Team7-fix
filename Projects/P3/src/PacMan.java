@@ -67,10 +67,10 @@ public class PacMan {
     checkAround.add(new Location(myLoc.x+1, myLoc.y));
     checkAround.add(new Location(myLoc.x-1, myLoc.y));
     checkAround.add(new Location(myLoc.x, myLoc.y+1));
-    checkAround.add(new Location(myLoc.x, myLoc.x-1));
+    checkAround.add(new Location(myLoc.x, myLoc.y-1));
 
     for(Location loc : checkAround){
-      if (myMap.getField().get(loc).contains(Map.Type.GHOST)){
+      if (myMap.getField().get(loc).contains(Map.Type.PACMAN)){
         return true;
       };
     }
