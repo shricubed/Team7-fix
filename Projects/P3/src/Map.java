@@ -100,7 +100,6 @@ public class Map {
       field.get(ghostLoc).remove(Type.GHOST);
       direction.remove(Type.PACMAN);
       direction.add(Type.GHOST);
-      gameOver = true;
       return true;
     }
     return false;
