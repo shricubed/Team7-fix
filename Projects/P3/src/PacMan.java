@@ -57,7 +57,6 @@ public class PacMan {
         this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
         return false;
     }
-
     return true;
   }
 
