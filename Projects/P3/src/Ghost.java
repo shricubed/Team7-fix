@@ -49,7 +49,6 @@ public class Ghost {
         else {
           randomNum = 0;
         }
-        this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
         return true;
     }
