@@ -88,10 +88,10 @@ public class Map {
       return wallSet;
     }
     else if (move.contains(Map.Type.EMPTY)) { // Empty case
-      return emptySet;
+      return move;
     }
     else {
-      return move;
+      return emptySet;
     }
   }
 
@@ -100,7 +100,6 @@ public class Map {
       field.get(ghostLoc).remove(Type.GHOST);
       direction.remove(Type.PACMAN);
       direction.add(Type.GHOST);
-      gameOver = true;
       return true;
     }
     return false;
@@ -150,9 +149,6 @@ public class Map {
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field
-      field.get(pac_man_loc).add(Type.EMPTY);// adding empty
-      field.get(pac_man_loc).remove(Type.COOKIE);
-      //field.get(pac_man_loc).add(Type.EMPTY); //adding empty
       //incrementing cookies eaten
       cookies += 1;
       //simply return the cookie now

@@ -49,7 +49,6 @@ public class Ghost {
         else {
           randomNum = 0;
         }
-        this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
         return true;
     }
@@ -70,7 +69,7 @@ public class Ghost {
       if (type == null) {
         return false;
       }
-      if (type.contains(Map.Type.PACMAN)){
+      if (type.contains(Map.Type.GHOST)){
         return true;
       }
     }
@@ -85,7 +84,7 @@ public class Ghost {
 
      //myMap.attack expects the name of a ghost, and returns true if successful
     if(is_pacman_in_range()){
-      return myMap.attack(myName);
+      return true;
     }else{
       return false;
     }
