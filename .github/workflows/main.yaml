@@ -118,3 +118,33 @@ jobs:
         cd Projects/P3/
         javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapGetLoc.java
         java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+  Roshan_Test_PacMan_GetValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Roshan Test PacMan GetValidMoves
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestPacManValidMoves.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+  Roshan_Test_Ghost_GetValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Roshan Test Ghost GetValidMoves
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestGhostValidMoves.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+  Roshan_Test_Map_Move:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+    - uses: actions/checkout@v2
+    - name: Compile Run Roshan Test Map Move
+      run: |
+        cd Projects/P3/
+        javac -cp "tests/*:src/:tests/" src/*.java tests/TestMapMove.java
+        java -cp "tests/*:src/:tests/" org.junit.runner.JUnitCore TestMapMove
