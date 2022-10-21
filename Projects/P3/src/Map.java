@@ -115,6 +115,7 @@ public class Map {
     HashSet<Type> right = field.get(new Location(ghostLoc.x+1, ghostLoc.y));
 
     if(attackHelper(up, ghostLoc) || attackHelper(down, ghostLoc) || attackHelper(left, ghostLoc) || attackHelper(right, ghostLoc)) {
+        gameOver = true;
       return true;
     }
     return false;
@@ -149,7 +150,7 @@ public class Map {
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field
-      field.get(pac_man_loc).remove(COOKIE);
+      field.get(pac_man_loc).remove(Type.COOKIE);
       //incrementing cookies eaten
       cookies += 1;
       //simply return the cookie now
