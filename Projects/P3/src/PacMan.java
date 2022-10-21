@@ -55,9 +55,9 @@ public class PacMan {
         }
         this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
-        return false;
+        return true;
     }
-    return true;
+    return false;
   }
 
   public boolean is_ghost_in_range() {
@@ -69,7 +69,7 @@ public class PacMan {
     checkAround.add(new Location(myLoc.x, myLoc.y-1));
 
     for(Location loc : checkAround){
-      if (myMap.getField().get(loc).contains(Map.Type.PACMAN)){
+      if (myMap.getField().get(loc).contains(Map.Type.GHOST)){
         return true;
       };
     }
