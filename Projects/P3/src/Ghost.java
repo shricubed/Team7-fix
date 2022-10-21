@@ -31,13 +31,13 @@ public class Ghost {
 			  valid_moves.add(loc);
 		  }
 	  }
-	  
+
 	  return valid_moves;
   }
 
   public boolean move() {
     // Randomly selects a move from the valid moves and executes them
-    int randomNum; 
+    int randomNum;
     Random rand = new Random();
     ArrayList<Location> moves = get_valid_moves();
 
@@ -85,7 +85,7 @@ public class Ghost {
 
      //myMap.attack expects the name of a ghost, and returns true if successful
     if(is_pacman_in_range()){
-      return true;
+      return myMap.attack(myName);
     }else{
       return false;
     }
