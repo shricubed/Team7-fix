@@ -54,19 +54,19 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-	  
+
 	HashSet<Type> types = getLoc(loc);
 
 	if (type == Map.Type.PACMAN) {
 		if (types.contains(Map.Type.PACMAN) || types.contains(Map.Type.WALL))
 			return false;
-		
+
 		PacManComponent pacman = (PacManComponent) components.get(name);
 		pacman.setLocation(loc.x, loc.y);
 	} else if (type == Map.Type.GHOST) {
 		if (types.contains(Map.Type.WALL))
 			return false;
-		
+
 		GhostComponent ghost = (GhostComponent) components.get(name);
 		ghost.setLocation(loc.x, loc.y);
 	}
@@ -76,8 +76,8 @@ public class Map {
 	locations.put(name, loc);
   field.get(loc).add(type);//updating field with type
 	//types.add(type);
-  
-	
+
+
     return true;
   }
 
@@ -108,7 +108,7 @@ public class Map {
   public boolean attack(String Name) {
     // update gameOver
     Location ghostLoc = locations.get(Name);
-    
+
     HashSet<Type> up = field.get(new Location(ghostLoc.x, ghostLoc.y+1));
     HashSet<Type> down = field.get(new Location(ghostLoc.x, ghostLoc.y-1));
     HashSet<Type> left = field.get(new Location(ghostLoc.x-1, ghostLoc.y));
@@ -127,13 +127,13 @@ public class Map {
     /* grabs pacmans current location by referencing name from locations hashmap
      * checks if there is also a cookie at that location, by using the location grabbed
      * and checking the fields hashmap, one coordinate could lead to multiple types
-     * ex, field.get(Loc(10, 4)) could return {PACMAN, COOKIE, GHOST} 
+     * ex, field.get(Loc(10, 4)) could return {PACMAN, COOKIE, GHOST}
      * if a cookie exists here, remove it from that field
      * and return the cookie that was eaten
      * also update display?
-     * 
+     *
      */
-    
+
     //pacman location
     Location pac_man_loc = locations.get(name);
     //getting other components at that locations
@@ -149,6 +149,7 @@ public class Map {
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field
+      field.get(pac_man_loc).remove(COOKIE);
       //incrementing cookies eaten
       cookies += 1;
       //simply return the cookie now
@@ -163,4 +164,3 @@ public class Map {
     return field;
   }
 }
- 
