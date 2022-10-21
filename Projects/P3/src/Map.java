@@ -100,6 +100,7 @@ public class Map {
       field.get(ghostLoc).remove(Type.GHOST);
       direction.remove(Type.PACMAN);
       direction.add(Type.GHOST);
+      gameOver = true;
       return true;
     }
     return false;
@@ -115,7 +116,6 @@ public class Map {
     HashSet<Type> right = field.get(new Location(ghostLoc.x+1, ghostLoc.y));
 
     if(attackHelper(up, ghostLoc) || attackHelper(down, ghostLoc) || attackHelper(left, ghostLoc) || attackHelper(right, ghostLoc)) {
-        gameOver = true;
       return true;
     }
     return false;
@@ -146,7 +146,7 @@ public class Map {
       //removing the cookie from locations
       locations.remove(cookie_name);
       //storing return value of cookie eaten
-      JComponent eaten_cookie =  components.get(cookie_name);
+      JComponent eaten_cookie = components.get(cookie_name);
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field

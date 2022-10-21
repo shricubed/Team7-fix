@@ -84,8 +84,7 @@ public class Ghost {
 
      //myMap.attack expects the name of a ghost, and returns true if successful
     if(is_pacman_in_range()){
-      myMap.attack(myName);
-      return true;
+      return myMap.attack(myName);
     }else{
       return false;
     }
