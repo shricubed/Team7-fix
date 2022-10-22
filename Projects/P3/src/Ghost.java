@@ -70,7 +70,7 @@ public class Ghost {
       if (type == null) {
         return false;
       }
-      if (type.contains(Map.Type.GHOST)){
+      if (type.contains(Map.Type.PACMAN)){
         return true;
       }
     }
