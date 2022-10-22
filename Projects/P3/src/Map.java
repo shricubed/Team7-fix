@@ -58,7 +58,7 @@ public class Map {
 	HashSet<Type> types = getLoc(loc);
 
 	if (type == Map.Type.PACMAN) {
-		if (types.contains(Map.Type.PACMAN) || types.contains(Map.Type.WALL))
+		if (types.contains(Map.Type.WALL))
 			return false;
 		
 		PacManComponent pacman = (PacManComponent) components.get(name);
