@@ -27,7 +27,7 @@ public class Ghost {
           || myMap.getLoc(loc).contains(Map.Type.COOKIE)
 				  || myMap.getLoc(loc).contains(Map.Type.PACMAN)
 				  || myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
-				  !myMap.getLoc(loc).contains(Map.Type.WALL)) {
+				  !myMap.getLoc(loc).contains(Map.Type.WALL)) { //condition is correct
 			  valid_moves.add(loc);
 		  }
 	  }
