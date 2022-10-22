@@ -23,11 +23,8 @@ public class Ghost {
 
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
-		  if ((myMap.getLoc(loc).contains(Map.Type.EMPTY)
-          || myMap.getLoc(loc).contains(Map.Type.COOKIE)
-				  || myMap.getLoc(loc).contains(Map.Type.PACMAN)
-				  || myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
-				  !myMap.getLoc(loc).contains(Map.Type.WALL)) { //condition is correct
+      // the only restriction on the ghost's movement is a wall
+		  if (!myMap.getLoc(loc).contains(Map.Type.WALL)) {
 			  valid_moves.add(loc);
 		  }
 	  }
