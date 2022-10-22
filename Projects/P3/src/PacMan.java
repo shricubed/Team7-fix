@@ -27,10 +27,10 @@ public class PacMan {
 
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
-		  if (((myMap.getLoc(loc).contains(Map.Type.EMPTY)||
+		  if (((myMap.getLoc(loc).contains(Map.Type.EMPTY)|| 
 				  myMap.getLoc(loc).contains(Map.Type.COOKIE) ||
 				  myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
-				  !myMap.getLoc(loc).contains(Map.Type.WALL)) ||
+				  !myMap.getLoc(loc).contains(Map.Type.WALL)) || 
           myMap.getLoc(loc).size() == 1 && myMap.getLoc(loc).contains(Map.Type.PACMAN)) {
 			  valid_moves.add(loc);
 		  }

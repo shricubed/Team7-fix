@@ -24,7 +24,7 @@ public class Ghost {
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
 		  if ((myMap.getLoc(loc).contains(Map.Type.EMPTY)
-				  || myMap.getLoc(loc).contains(Map.Type.COOKIE)
+          || myMap.getLoc(loc).contains(Map.Type.COOKIE)
 				  || myMap.getLoc(loc).contains(Map.Type.PACMAN)
 				  || myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
 				  !myMap.getLoc(loc).contains(Map.Type.WALL)) {
@@ -49,7 +49,7 @@ public class Ghost {
         else {
           randomNum = 0;
         }
-	this.myLoc = moves.get(randomNum);
+	      this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
         return true;
     }
