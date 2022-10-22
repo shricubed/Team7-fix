@@ -150,6 +150,7 @@ public class Map {
       //removing cookie from components
       components.remove(cookie_name);
       //removing cookie enum from field
+      field.get(pac_man_loc).add(Type.EMPTY)
       field.get(pac_man_loc).remove(Type.COOKIE);
       //incrementing cookies eaten
       cookies += 1;
