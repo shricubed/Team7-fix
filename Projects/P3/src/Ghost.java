@@ -24,20 +24,20 @@ public class Ghost {
 	  ArrayList<Location> valid_moves = new ArrayList<Location>();
 	  for (Location loc : moves) {
 		  if ((myMap.getLoc(loc).contains(Map.Type.EMPTY)
-				  || myMap.getLoc(loc).contains(Map.Type.COOKIE)
+          || myMap.getLoc(loc).contains(Map.Type.COOKIE)
 				  || myMap.getLoc(loc).contains(Map.Type.PACMAN)
 				  || myMap.getLoc(loc).contains(Map.Type.GHOST)) &&
 				  !myMap.getLoc(loc).contains(Map.Type.WALL)) {
 			  valid_moves.add(loc);
 		  }
 	  }
-	  
+
 	  return valid_moves;
   }
 
   public boolean move() {
     // Randomly selects a move from the valid moves and executes them
-    int randomNum; 
+    int randomNum;
     Random rand = new Random();
     ArrayList<Location> moves = get_valid_moves();
 
@@ -49,6 +49,7 @@ public class Ghost {
         else {
           randomNum = 0;
         }
+	      this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.GHOST);
         return true;
     }
@@ -69,7 +70,7 @@ public class Ghost {
       if (type == null) {
         return false;
       }
-      if (type.contains(Map.Type.GHOST)){
+      if (type.contains(Map.Type.PACMAN)){
         return true;
       }
     }
@@ -84,7 +85,7 @@ public class Ghost {
 
      //myMap.attack expects the name of a ghost, and returns true if successful
     if(is_pacman_in_range()){
-      return true;
+      return myMap.attack(myName);
     }else{
       return false;
     }

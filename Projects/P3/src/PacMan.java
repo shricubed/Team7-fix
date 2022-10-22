@@ -35,13 +35,13 @@ public class PacMan {
 			  valid_moves.add(loc);
 		  }
 	  }
-	  
+
 	  return valid_moves;
   }
 
   public boolean move() {
     // Randomly selects a move from the valid moves and executes them
-    int randomNum; 
+    int randomNum;
     Random rand = new Random();
     ArrayList<Location> moves = get_valid_moves();
 
@@ -55,9 +55,9 @@ public class PacMan {
         }
         this.myLoc = moves.get(randomNum);
         this.myMap.move(this.myName, this.myLoc, Map.Type.PACMAN);
-        return false;
+        return true;
     }
-    return true;
+    return false;
   }
 
   public boolean is_ghost_in_range() {
@@ -69,7 +69,7 @@ public class PacMan {
     checkAround.add(new Location(myLoc.x, myLoc.y-1));
 
     for(Location loc : checkAround){
-      if (myMap.getField().get(loc).contains(Map.Type.PACMAN)){
+      if (myMap.getField().get(loc).contains(Map.Type.GHOST)){
         return true;
       };
     }
@@ -84,7 +84,7 @@ public class PacMan {
      */
     //set of other components at pacmans location
     HashSet<Map.Type> other_comp = myMap.getLoc(myLoc);
-    if(other_comp.contains(Map.Type.GHOST)){
+    if(other_comp.contains(Map.Type.COOKIE)){
       //checking to make sure a cookie is at the current location
       return myMap.eatCookie(myName);
     }else{
