@@ -21,8 +21,10 @@ public class TestGhostValidMoves extends TestCase {
     assertTrue(valid_moves.size() == ghost_valid_moves.size());
     
     if (valid_moves.size() == ghost_valid_moves.size()) {
-    	assertTrue(valid_moves.get(0).equals(ghost_valid_moves.get(0)));
-    	assertTrue(valid_moves.get(1).equals(ghost_valid_moves.get(1)));
+    	assertTrue(valid_moves.get(0).x == ghost_valid_moves.get(0).x);
+    	assertTrue(valid_moves.get(0).y == ghost_valid_moves.get(0).y);
+    	assertTrue(valid_moves.get(1).x == ghost_valid_moves.get(1).x);
+    	assertTrue(valid_moves.get(1).y == ghost_valid_moves.get(1).y);
     }
   }
 }

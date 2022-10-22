@@ -22,8 +22,9 @@ public class TestPacManValidMoves extends TestCase {
     assertTrue(valid_moves.size() == pacman_valid_moves.size());
     
     if (valid_moves.size() == pacman_valid_moves.size()) {
-    	assertTrue(valid_moves.get(0).equals(pacman_valid_moves.get(0)));
-    	assertTrue(valid_moves.get(1).equals(pacman_valid_moves.get(1)));
-    }
+    	assertTrue(valid_moves.get(0).x == pacman_valid_moves.get(0).x);
+    	assertTrue(valid_moves.get(0).y == pacman_valid_moves.get(0).y);
+    	assertTrue(valid_moves.get(1).x == pacman_valid_moves.get(1).x);
+    	assertTrue(valid_moves.get(1).y == pacman_valid_moves.get(1).y);
   }
 }
